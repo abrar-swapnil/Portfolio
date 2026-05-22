@@ -45,7 +45,7 @@ export default function Footer() {
                 target={s.href.startsWith('mailto') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="transition-colors"
+                className="interactive transition-colors"
                 style={{ color: 'var(--text-muted)' }}
                 onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}

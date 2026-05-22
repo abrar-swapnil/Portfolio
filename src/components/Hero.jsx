@@ -157,7 +157,7 @@ export default function Hero() {
             href="https://github.com/abrar-swapnil"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs transition-colors"
+            className="interactive flex items-center gap-2 text-xs transition-colors"
             style={{
               color: 'var(--text-muted)',
               fontFamily: 'DM Sans, sans-serif',
@@ -172,7 +172,7 @@ export default function Hero() {
             href="https://linkedin.com/in/abrar-swapnil-559852352"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs transition-colors"
+            className="interactive flex items-center gap-2 text-xs transition-colors"
             style={{
               color: 'var(--text-muted)',
               fontFamily: 'DM Sans, sans-serif',

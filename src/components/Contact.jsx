@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+ 
 import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react'
 
 const CONTACT_LINKS = [
@@ -26,44 +26,20 @@ const CONTACT_LINKS = [
 ]
 
 export default function Contact() {
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              el.style.animationDelay = `${i * 100}ms`
-              el.classList.add('animate-in')
-              el.classList.remove('initial-hidden')
-            })
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.15 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="contact"
-      ref={sectionRef}
       aria-labelledby="contact-title"
-      className="py-28"
-      style={{ borderTop: '1px solid var(--border)' }}
+      className="py-28 section-block section-alt"
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center mb-14">
-          <p className="section-label justify-center reveal initial-hidden">Get in Touch</p>
-          <h2 id="contact-title" className="section-heading reveal initial-hidden">
-            Let's{' '}
+          <p className="section-label justify-center reveal" style={{ '--delay': '0ms' }}>Get in Touch</p>
+          <h2 id="contact-title" className="section-heading reveal" style={{ '--delay': '100ms' }}>
+            <span className="rewrite-text" data-rewrite>Let's </span>
             <span style={{ color: 'var(--accent)' }}>connect</span>
           </h2>
-          <p className="prose-text mt-4 reveal initial-hidden">
+          <p className="prose-text hover-lift mt-4 reveal rewrite-text" data-rewrite style={{ '--delay': '200ms' }}>
             I'm actively looking for internship and junior ML/AI engineering opportunities.
             Whether you want to discuss a project, share feedback, or just say hello —
             my inbox is always open.
@@ -78,12 +54,12 @@ export default function Contact() {
               href={c.href}
               target={c.href.startsWith('mailto') ? '_self' : '_blank'}
               rel="noopener noreferrer"
-              className="contact-link reveal initial-hidden group"
-              style={{ animationDelay: `${(i + 3) * 90}ms` }}
+              className="contact-link reveal group"
+              style={{ '--delay': `${(i + 3) * 90}ms` }}
             >
               {/* Icon */}
               <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                className="contact-icon w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{
                   background: 'rgba(6,182,212,0.08)',
                   color:      'var(--accent)',
@@ -96,7 +72,7 @@ export default function Contact() {
               {/* Text */}
               <div className="flex-1 min-w-0">
                 <p
-                  className="text-xs mb-0.5"
+                  className="contact-label text-xs mb-0.5"
                   style={{
                     color:      'var(--text-muted)',
                     fontFamily: 'JetBrains Mono, monospace',
@@ -106,7 +82,7 @@ export default function Contact() {
                   {c.label}
                 </p>
                 <p
-                  className="text-sm truncate"
+                  className="contact-value text-sm truncate"
                   style={{ color: 'var(--text)', fontFamily: 'DM Sans, sans-serif' }}
                 >
                   {c.value}
@@ -121,7 +97,7 @@ export default function Contact() {
                   style={{ color: 'var(--accent)' }}
                 />
                 <p
-                  className="text-xs hidden sm:block"
+                  className="contact-hint text-xs hidden sm:block"
                   style={{ color: 'var(--text-muted)', fontFamily: 'DM Sans, sans-serif' }}
                 >
                   {c.hint}
@@ -132,7 +108,7 @@ export default function Contact() {
         </div>
 
         {/* CTA */}
-        <div className="mt-14 text-center reveal initial-hidden">
+        <div className="mt-14 text-center reveal" style={{ '--delay': '480ms' }}>
           <a
             href="mailto:swapnil017763@gmail.com"
             className="btn-primary"
@@ -145,12 +121,13 @@ export default function Contact() {
 
         {/* Availability note */}
         <div
-          className="mt-10 text-center reveal initial-hidden"
+          className="mt-10 text-center reveal"
           style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize:   '0.7rem',
             color:      'var(--text-muted)',
             letterSpacing: '0.06em',
+            '--delay': '560ms',
           }}
         >
           <span

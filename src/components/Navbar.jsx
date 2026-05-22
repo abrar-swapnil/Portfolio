@@ -42,13 +42,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-bg/90 backdrop-blur-md border-b border-border-subtle'
+            ? 'nav-island nav-island-scrolled'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-[68px] flex items-center justify-between">
+        <div className="nav-island-inner max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between">
 
           {/* Logo */}
           <a
@@ -83,7 +83,7 @@ export default function Navbar() {
                     e.preventDefault()
                     handleNav(link.href)
                   }}
-                  className={`px-3 py-2 rounded-md text-sm transition-all duration-200 ${
+                  className={`nav-link interactive px-3 py-2 rounded-md text-sm transition-all duration-200 ${
                     isActive
                       ? 'text-text-primary'
                       : 'text-text-muted hover:text-text-primary'
@@ -146,7 +146,7 @@ export default function Navbar() {
                 e.preventDefault()
                 handleNav(link.href)
               }}
-              className="text-left px-3 py-3 rounded-md text-base text-text-muted hover:text-text-primary hover:bg-surface transition-all"
+              className="nav-link interactive text-left px-3 py-3 rounded-md text-base text-text-muted hover:text-text-primary hover:bg-surface transition-all"
               style={{ fontFamily: 'DM Sans, sans-serif' }}
             >
               {link.label}

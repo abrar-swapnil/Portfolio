@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+ 
 
 const SKILL_GROUPS = [
   {
@@ -36,8 +36,8 @@ const SKILL_GROUPS = [
 function SkillGroup({ label, color, accent, skills, delay = 0 }) {
   return (
     <div
-      className="card p-6 reveal initial-hidden"
-      style={{ animationDelay: `${delay}ms` }}
+      className="card p-6 reveal skill-card"
+      style={{ '--delay': `${delay}ms` }}
     >
       <div className="flex items-center gap-2 mb-5">
         <span
@@ -45,7 +45,7 @@ function SkillGroup({ label, color, accent, skills, delay = 0 }) {
           style={{ background: accent }}
         />
         <h3
-          className="text-xs uppercase tracking-widest"
+          className="text-xs uppercase tracking-widest skill-group-title"
           style={{
             color:       'var(--text-muted)',
             fontFamily:  'JetBrains Mono, monospace',
@@ -67,46 +67,22 @@ function SkillGroup({ label, color, accent, skills, delay = 0 }) {
 }
 
 export default function Skills() {
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              el.style.animationDelay = `${i * 90}ms`
-              el.classList.add('animate-in')
-              el.classList.remove('initial-hidden')
-            })
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="skills"
-      ref={sectionRef}
       aria-labelledby="skills-title"
-      className="py-28"
-      style={{ borderTop: '1px solid var(--border)' }}
+      className="py-28 section-block"
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-xl mb-14 reveal initial-hidden">
+        <div className="max-w-xl mb-14 reveal" style={{ '--delay': '0ms' }}>
           <p className="section-label">Technical Skills</p>
           <h2 id="skills-title" className="section-heading">
-            My{' '}
+            <span className="rewrite-text" data-rewrite>My </span>
             <span style={{ color: 'var(--accent)' }}>toolkit</span>
           </h2>
-          <p className="prose-text mt-4 text-sm">
+          <p className="prose-text hover-lift mt-4 text-sm rewrite-text" data-rewrite>
             A curated set of languages, frameworks, and tools I work with to build and deploy
             data-driven and machine learning solutions.
           </p>
@@ -120,11 +96,11 @@ export default function Skills() {
 
           {/* Currently learning card */}
           <div
-            className="card p-6 reveal initial-hidden md:col-span-2 xl:col-span-1"
+            className="card p-6 reveal md:col-span-2 xl:col-span-1"
             style={{
               background: 'rgba(6,182,212,0.03)',
               borderColor: 'rgba(6,182,212,0.12)',
-              animationDelay: `${SKILL_GROUPS.length * 90}ms`,
+              '--delay': `${SKILL_GROUPS.length * 90}ms`,
             }}
           >
             <div className="flex items-center gap-2 mb-5">

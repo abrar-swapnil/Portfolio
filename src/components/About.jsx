@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+
 import { BookOpen, Target, Cpu } from 'lucide-react'
 
 const HIGHLIGHTS = [
@@ -20,41 +20,17 @@ const HIGHLIGHTS = [
 ]
 
 export default function About() {
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              el.style.animationDelay = `${i * 100}ms`
-              el.classList.add('animate-in')
-              el.classList.remove('initial-hidden')
-            })
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.15 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="about"
-      ref={sectionRef}
       aria-labelledby="about-title"
-      className="py-28"
-      style={{ borderTop: '1px solid var(--border)' }}
+      className="py-28 section-block section-alt"
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-16 items-start">
 
           {/* Left — label + heading */}
-          <div className="reveal initial-hidden">
+          <div className="reveal" style={{ '--delay': '0ms' }}>
             <p className="section-label">About Me</p>
             <h2 id="about-title" className="section-heading">
               Engineering with{' '}
@@ -77,18 +53,18 @@ export default function About() {
           {/* Right — paragraphs */}
           <div className="space-y-5">
 
-            <p className="prose-text reveal initial-hidden">
+            <p className="prose-text hover-lift reveal" style={{ '--delay': '120ms' }}>
               I’m <strong style={{ color: 'var(--text)', fontWeight: 500 }}>Abrar Swapnil</strong>,
               a Software Engineering student focused on Artificial Intelligence and Machine Learning.
               I build data-driven systems that learn from patterns and solve real-world problems.
             </p>
 
-            <p className="prose-text reveal initial-hidden">
+            <p className="prose-text hover-lift reveal" style={{ '--delay': '220ms' }}>
               My work includes data preprocessing, exploratory data analysis, and machine learning model development
               using Python, Pandas, NumPy, Scikit-learn, TensorFlow, and PyTorch.
             </p>
 
-            <p className="prose-text reveal initial-hidden">
+            <p className="prose-text hover-lift reveal" style={{ '--delay': '320ms' }}>
               I follow a structured engineering approach — understanding the problem, preparing clean data,
               building models iteratively, and evaluating results using measurable performance.
             </p>
@@ -101,8 +77,8 @@ export default function About() {
           {HIGHLIGHTS.map((h, i) => (
             <div
               key={h.title}
-              className="card p-5 reveal initial-hidden"
-              style={{ animationDelay: `${(i + 3) * 100}ms` }}
+              className="card p-5 reveal"
+              style={{ '--delay': `${(i + 3) * 100}ms` }}
             >
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center mb-4"

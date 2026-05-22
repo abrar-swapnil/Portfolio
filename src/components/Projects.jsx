@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+ 
 import { Github, ExternalLink, BarChart2, TrendingUp, Brain } from 'lucide-react'
 
 const PROJECTS = [
@@ -43,8 +43,8 @@ const PROJECTS = [
 function ProjectCard({ project, index }) {
   return (
     <div
-      className="card p-7 flex flex-col gap-5 reveal initial-hidden group"
-      style={{ animationDelay: `${index * 120}ms` }}
+      className="card p-7 flex flex-col gap-5 reveal group"
+      style={{ '--delay': `${index * 120}ms` }}
     >
       {/* Top row */}
       <div className="flex items-start justify-between">
@@ -125,7 +125,7 @@ function ProjectCard({ project, index }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm transition-colors"
+          className="interactive flex items-center gap-2 text-sm transition-colors"
           style={{ color: 'var(--text-muted)', fontFamily: 'DM Sans, sans-serif', textDecoration: 'none' }}
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
@@ -138,7 +138,7 @@ function ProjectCard({ project, index }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm transition-colors"
+            className="interactive flex items-center gap-2 text-sm transition-colors"
             style={{ color: 'var(--text-muted)', fontFamily: 'DM Sans, sans-serif', textDecoration: 'none' }}
             onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
             onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
@@ -153,47 +153,23 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              el.style.animationDelay = `${i * 110}ms`
-              el.classList.add('animate-in')
-              el.classList.remove('initial-hidden')
-            })
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="projects"
-      ref={sectionRef}
       aria-labelledby="projects-title"
-      className="py-28"
-      style={{ borderTop: '1px solid var(--border)' }}
+      className="py-28 section-block section-alt"
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <div className="max-w-lg reveal initial-hidden">
+          <div className="max-w-lg reveal" style={{ '--delay': '0ms' }}>
             <p className="section-label">Projects</p>
             <h2 id="projects-title" className="section-heading">
-              What I've{' '}
+              <span className="rewrite-text" data-rewrite>What I've </span>
               <span style={{ color: 'var(--accent)' }}>built</span>
             </h2>
-            <p className="prose-text mt-3 text-sm">
+            <p className="prose-text hover-lift mt-3 text-sm rewrite-text" data-rewrite>
               A selection of data science and ML projects — from exploratory analysis to predictive modelling.
             </p>
           </div>
@@ -202,7 +178,7 @@ export default function Projects() {
             href="https://github.com/abrar-swapnil"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline text-sm reveal initial-hidden self-start sm:self-auto"
+            className="btn-outline text-sm reveal self-start sm:self-auto"
             style={{ gap: '8px', textDecoration: 'none' }}
           >
             <Github size={15} />
