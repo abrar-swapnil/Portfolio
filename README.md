@@ -2,7 +2,7 @@
 
 Personal portfolio website for Abrar Swapnil, Software Engineering Student & Aspiring AI/ML Engineer.
 
-**Live Demo:** [abrarswapnil.dev](https://abrarswapnil.dev)
+**Live Demo:** [abrarswapnil.dev](https://abrar-swapnil.vercel.app)
 
 ---
 
