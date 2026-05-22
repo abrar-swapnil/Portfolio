@@ -9,7 +9,7 @@ const PROJECTS = [
     description:
       'End-to-end analysis of a large retail superstore dataset. Explored sales trends, regional performance, and profit drivers using Python. Identified key business insights to improve decision-making through structured EDA and statistical summaries.',
     tech:        ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter'],
-    github:      'https://github.com/abrarswapnil/superstore-analysis',
+    github:      'https://github.com/abrar-swapnil/superstore-data-analysis',
     status:      'Complete',
     statusColor: 'rgba(34,197,94,0.15)',
     statusText:  'rgb(134,239,172)',
@@ -21,7 +21,7 @@ const PROJECTS = [
     description:
       'Comprehensive exploratory data analysis pipeline covering data cleaning, feature relationships, outlier detection, and storytelling through visualizations. Built reusable utilities for rapid EDA on structured datasets.',
     tech:        ['Python', 'Pandas', 'Seaborn', 'Plotly', 'Scikit-learn', 'Jupyter'],
-    github:      'https://github.com/abrarswapnil/eda-project',
+    github:      'https://github.com/abrar-swapnil/Data-Visualization-EDA',
     status:      'Complete',
     statusColor: 'rgba(34,197,94,0.15)',
     statusText:  'rgb(134,239,172)',

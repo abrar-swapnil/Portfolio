@@ -57,7 +57,7 @@ portfolio/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/abrarswapnil/portfolio.git
+git clone https://github.com/abrar-swapnil/portfolio.git
 cd portfolio
 
 # 2. Install dependencies
@@ -125,8 +125,8 @@ Update `src/components/Contact.jsx`:
 ```jsx
 const CONTACT_LINKS = [
   { value: 'your@email.com', href: 'mailto:your@email.com', ... },
-  { value: 'linkedin.com/in/yourprofile', href: '...', ... },
-  { value: 'github.com/yourusername',     href: '...', ... },
+  { value: 'linkedin.com/in/abrar-swapnil-559852352', href: 'https://linkedin.com/in/abrar-swapnil-559852352', ... },
+  { value: 'github.com/abrar-swapnil',     href: 'https://github.com/abrar-swapnil', ... },
 ]
 ```
 
@@ -139,7 +139,7 @@ const PROJECTS = [
     title:       'Your Project Title',
     description: 'What it does and why it matters.',
     tech:        ['Python', 'TensorFlow', '...'],
-    github:      'https://github.com/yourusername/repo',
+    github:      'https://github.com/abrar-swapnil/portfolio',
     status:      'Complete',
     ...
   },
