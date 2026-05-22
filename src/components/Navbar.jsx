@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { smoothScrollToId } from '../utils/smoothScroll'
 
 const NAV_LINKS = [
   { label: 'About',      href: '#about'      },
@@ -35,8 +36,7 @@ export default function Navbar() {
 
   const handleNav = (href) => {
     setMenuOpen(false)
-    const target = document.querySelector(href)
-    if (target) target.scrollIntoView({ behavior: 'smooth' })
+    smoothScrollToId(href.replace('#', ''), 850)
   }
 
   return (
@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="#top"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            onClick={(e) => { e.preventDefault(); smoothScrollToId('top', 850) }}
             className="flex items-center gap-2 group"
             aria-label="Go to top"
           >

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, ChevronDown, Github, Linkedin } from 'lucide-react'
+import { smoothScrollToId } from '../utils/smoothScroll'
 
 const TAGLINES = [
   'Building intelligent systems from data.',
@@ -44,10 +45,10 @@ export default function Hero() {
   }, [charIndex, typing, taglineIndex])
 
   const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+    smoothScrollToId('projects', 850)
   }
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    smoothScrollToId('contact', 850)
   }
 
   return (
@@ -187,7 +188,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <button
-        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+        onClick={() => smoothScrollToId('about', 850)}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 transition-opacity hover:opacity-100 opacity-40"
         aria-label="Scroll down"
       >
