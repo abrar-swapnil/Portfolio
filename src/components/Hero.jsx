@@ -152,7 +152,7 @@ export default function Hero() {
         {/* Social quick links */}
         <div className="initial-hidden animate-in delay-600 mt-8 flex items-center justify-center gap-5">
           <a
-            href="https://github.com/abrarswapnil"
+            href="https://github.com/abrar-swapnil"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs transition-colors"
@@ -167,7 +167,7 @@ export default function Hero() {
           </a>
           <span style={{ color: 'var(--border)', fontSize: '0.6rem' }}>●</span>
           <a
-            href="https://linkedin.com/in/abrarswapnil"
+            href="https://linkedin.com/in/abrar-swapnil-559852352"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs transition-colors"
