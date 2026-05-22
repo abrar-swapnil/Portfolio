@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <a
-            href="mailto:abrarswapnil@email.com"
+            href="mailto:swapnil017763@email.com"
             className="hidden md:flex btn-outline text-sm py-2 px-4"
           >
             Get in touch
@@ -142,7 +142,7 @@ export default function Navbar() {
           ))}
           <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
             <a
-              href="mailto:abrarswapnil@email.com"
+              href="mailto:swapnil017763@email.com"
               className="btn-primary w-full justify-center text-sm"
               onClick={() => setMenuOpen(false)}
             >
