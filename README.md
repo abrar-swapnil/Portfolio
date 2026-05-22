@@ -78,6 +78,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 | `npm run dev`     | Start local development server       |
 | `npm run build`   | Build production bundle → `dist/`    |
 | `npm run build:prerender` | Build production HTML with prerendering |
+| `npm run build:prerender:chrome` | Prerender using system Chrome (recommended on macOS) |
 | `npm run preview` | Preview production build locally     |
 
 ---

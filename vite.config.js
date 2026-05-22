@@ -1,18 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { createRequire } from 'node:module'
-
-const require = createRequire(import.meta.url)
-const prerender = require('vite-plugin-prerender')
+import vitePluginPrerenderer from 'vite-plugin-prerenderer'
 
 export default defineConfig({
   plugins: [
     react(),
     ...(process.env.PRERENDER === 'true'
       ? [
-          prerender({
-            staticDir: 'dist',
-            outputDir: 'dist',
+          vitePluginPrerenderer({
             routes: ['/'],
           }),
         ]

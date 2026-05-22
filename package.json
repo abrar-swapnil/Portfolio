@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:prerender": "PRERENDER=true vite build",
+    "build:prerender:chrome": "PUPPETEER_EXECUTABLE_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" PRERENDER=true vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
@@ -21,6 +22,7 @@
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
     "vite": "^5.3.4",
-    "vite-plugin-prerender": "^1.0.8"
+    "vite-plugin-prerenderer": "^1.0.1",
+    "puppeteer": "^24.15.0"
   }
 }
