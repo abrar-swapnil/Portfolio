@@ -175,7 +175,7 @@ export default function Projects() {
           </div>
 
           <a
-            href="https://github.com/abrar-swapnil"
+            href="https://github.com/abrar-swapnil?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline text-sm reveal self-start sm:self-auto"
