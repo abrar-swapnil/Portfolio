@@ -1,9 +1,9 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
 
 const SOCIAL = [
-  { icon: <Github  size={15} />, href: 'https://github.com/abrarswapnil',   label: 'GitHub'   },
-  { icon: <Linkedin size={15} />, href: 'https://linkedin.com/in/abrarswapnil', label: 'LinkedIn' },
-  { icon: <Mail    size={15} />, href: 'mailto:abrarswapnil@email.com',     label: 'Email'    },
+  { icon: <Github  size={15} />, href: 'https://github.com/abrar-swapnil',   label: 'GitHub'   },
+  { icon: <Linkedin size={15} />, href: 'https://linkedin.com/in/abrar-swapnil-559852352', label: 'LinkedIn' },
+  { icon: <Mail    size={15} />, href: 'mailto:swapnil017763@email.com',     label: 'Email'    },
 ]
 
 export default function Footer() {
