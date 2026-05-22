@@ -179,6 +179,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
+      aria-labelledby="projects-title"
       className="py-28"
       style={{ borderTop: '1px solid var(--border)' }}
     >
@@ -188,7 +189,7 @@ export default function Projects() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
           <div className="max-w-lg reveal initial-hidden">
             <p className="section-label">Projects</p>
-            <h2 className="section-heading">
+            <h2 id="projects-title" className="section-heading">
               What I've{' '}
               <span style={{ color: 'var(--accent)' }}>built</span>
             </h2>

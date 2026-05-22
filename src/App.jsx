@@ -10,8 +10,10 @@ import Footer     from './components/Footer'
 export default function App() {
   return (
     <div className="min-h-screen bg-bg text-text-primary">
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <div id="top" className="sr-only" aria-hidden="true" />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Skills />

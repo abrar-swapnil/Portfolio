@@ -46,6 +46,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
+      aria-labelledby="about-title"
       className="py-28"
       style={{ borderTop: '1px solid var(--border)' }}
     >
@@ -55,7 +56,7 @@ export default function About() {
           {/* Left — label + heading */}
           <div className="reveal initial-hidden">
             <p className="section-label">About Me</p>
-            <h2 className="section-heading">
+            <h2 id="about-title" className="section-heading">
               Engineering with{' '}
               <span style={{ color: 'var(--accent)' }}>purpose</span>{' '}
               &amp; precision.

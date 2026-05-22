@@ -53,6 +53,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      aria-labelledby="hero-title"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden hero-grid-bg"
     >
       {/* Ambient glow */}
@@ -90,6 +91,7 @@ export default function Hero() {
 
         {/* Name */}
         <h1
+          id="hero-title"
           className="initial-hidden animate-in delay-200"
           style={{
             fontFamily:    'Syne, sans-serif',

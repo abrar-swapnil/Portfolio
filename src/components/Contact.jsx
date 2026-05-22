@@ -52,13 +52,14 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
+      aria-labelledby="contact-title"
       className="py-28"
       style={{ borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <p className="section-label justify-center reveal initial-hidden">Get in Touch</p>
-          <h2 className="section-heading reveal initial-hidden">
+          <h2 id="contact-title" className="section-heading reveal initial-hidden">
             Let's{' '}
             <span style={{ color: 'var(--accent)' }}>connect</span>
           </h2>

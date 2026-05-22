@@ -52,9 +52,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <a
-            href="#"
+            href="#top"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             className="flex items-center gap-2 group"
+            aria-label="Go to top"
           >
             <span
               className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-black"
@@ -71,13 +72,17 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
             {NAV_LINKS.map(link => {
               const isActive = activeSection === link.href.slice(1)
               return (
-                <button
+                <a
                   key={link.href}
-                  onClick={() => handleNav(link.href)}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNav(link.href)
+                  }}
                   className={`px-3 py-2 rounded-md text-sm transition-all duration-200 ${
                     isActive
                       ? 'text-text-primary'
@@ -92,7 +97,7 @@ export default function Navbar() {
                       style={{ background: 'var(--accent)', width: '16px' }}
                     />
                   )}
-                </button>
+                </a>
               )
             })}
           </nav>
@@ -110,6 +115,8 @@ export default function Navbar() {
             className="md:hidden p-2 rounded-md text-text-muted hover:text-text-primary transition-colors"
             onClick={() => setMenuOpen(v => !v)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -118,6 +125,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-menu"
         className={`fixed inset-x-0 top-[68px] z-40 transition-all duration-300 md:hidden ${
           menuOpen
             ? 'opacity-100 pointer-events-auto translate-y-0'
@@ -129,16 +137,20 @@ export default function Navbar() {
           borderBottom: '1px solid var(--border)',
         }}
       >
-        <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
+        <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1" aria-label="Mobile">
           {NAV_LINKS.map(link => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNav(link.href)}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault()
+                handleNav(link.href)
+              }}
               className="text-left px-3 py-3 rounded-md text-base text-text-muted hover:text-text-primary hover:bg-surface transition-all"
               style={{ fontFamily: 'DM Sans, sans-serif' }}
             >
               {link.label}
-            </button>
+            </a>
           ))}
           <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
             <a

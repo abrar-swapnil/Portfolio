@@ -93,6 +93,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
+      aria-labelledby="skills-title"
       className="py-28"
       style={{ borderTop: '1px solid var(--border)' }}
     >
@@ -101,7 +102,7 @@ export default function Skills() {
         {/* Header */}
         <div className="max-w-xl mb-14 reveal initial-hidden">
           <p className="section-label">Technical Skills</p>
-          <h2 className="section-heading">
+          <h2 id="skills-title" className="section-heading">
             My{' '}
             <span style={{ color: 'var(--accent)' }}>toolkit</span>
           </h2>

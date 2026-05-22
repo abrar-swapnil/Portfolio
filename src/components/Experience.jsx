@@ -140,6 +140,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={sectionRef}
+      aria-labelledby="experience-title"
       className="py-28"
       style={{ borderTop: '1px solid var(--border)' }}
     >
@@ -149,7 +150,7 @@ export default function Experience() {
           {/* Left */}
           <div className="md:sticky md:top-24 reveal initial-hidden">
             <p className="section-label">Experience & Focus</p>
-            <h2 className="section-heading">
+            <h2 id="experience-title" className="section-heading">
               Current{' '}
               <span style={{ color: 'var(--accent)' }}>trajectory</span>
             </h2>
